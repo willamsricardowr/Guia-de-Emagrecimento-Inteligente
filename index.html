@@ -754,6 +754,52 @@ header {
   mask-image: linear-gradient(to right, #000 95%, transparent 100%);
   pointer-events: none;
 }
+/* ===== CORREÇÃO PARA MOBILE ===== */
+@media (max-width: 600px) {
+  /* garante que o vídeo fique enquadrado corretamente */
+  .hero-bg {
+    object-position: center top;
+    height: 100%;
+    min-height: 100vh;
+  }
+
+  /* dá mais respiro no topo e centraliza o conteúdo */
+  .hero {
+    padding-top: 90px;
+    padding-bottom: 60px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* evita que o título seja cortado */
+  .hero-content h1 {
+    font-size: clamp(1.8rem, 7vw, 2.3rem);
+    line-height: 1.15;
+    margin-top: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
+    overflow: visible;
+  }
+
+  /* mantém o texto legível e bem centralizado */
+  .hero .lead {
+    font-size: 1rem;
+    margin-inline: auto;
+    max-width: 90%;
+  }
+
+  /* centraliza a imagem e reduz tamanho */
+  .hero-image img {
+    width: 70%;
+    max-width: 240px;
+    margin-top: 20px;
+  }
+
+  /* evita que o vídeo interfira no toque dos botões */
+  .hero-bg {
+    pointer-events: none;
+  }
+}
 
   </style>
 </head>
